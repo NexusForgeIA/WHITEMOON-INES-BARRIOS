@@ -38,7 +38,20 @@
   fab.setAttribute('aria-controls', 'anaPanel');
   fab.setAttribute('aria-expanded', 'false');
   fab.setAttribute('aria-label', 'Abrir el chat con Ana');
-  fab.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.3-.6L3 21l1.8-5a8.3 8.3 0 0 1-.8-3.5 8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 8 7.4Z"/></svg>';
+  // El emblema es decorativo: el nombre accesible lo da el aria-label.
+  fab.innerHTML = '<picture><source srcset="assets/logo-monograma.webp" type="image/webp"><img src="assets/logo-monograma.png" width="144" height="144" alt=""></picture>';
+
+  // Las ondas llaman la atención hasta la primera apertura del chat. Eso se
+  // recuerda al pasar de una página a otra, pero no al recargar: una recarga
+  // vuelve a mostrarlas. Si sessionStorage no está disponible, siguen saliendo.
+  var CLAVE_ONDAS = 'anaChatAbierto';
+  var conOndas = true;
+  try {
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'reload') sessionStorage.removeItem(CLAVE_ONDAS);
+    if (sessionStorage.getItem(CLAVE_ONDAS)) conOndas = false;
+  } catch (e) { /* sin almacenamiento: las ondas siguen */ }
+  if (conOndas) fab.classList.add('ana-fab--ondas');
 
   var panel = el('div', 'ana-panel');
   panel.id = 'anaPanel';
@@ -340,6 +353,8 @@
     panel.hidden = false;
     fab.hidden = true;
     fab.setAttribute('aria-expanded', 'true');
+    fab.classList.remove('ana-fab--ondas');
+    try { sessionStorage.setItem(CLAVE_ONDAS, '1'); } catch (e) { /* sin almacenamiento */ }
     if (!iniciado) { iniciado = true; empezar(); }
     var foco = zona.querySelector('button, input, a');
     (foco || btnCerrar).focus();
