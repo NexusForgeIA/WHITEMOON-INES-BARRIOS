@@ -7,6 +7,7 @@
   <meta name="description" content="Reformas integrales de vivienda, cocinas, baños e interiorismo y diseño de espacios en Villaviciosa de Odón (Madrid).">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://nexusforgeia.github.io/WHITEMOON-INES-BARRIOS/servicios.html">
+  <meta name="theme-color" content="#f5e7dc">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
@@ -24,162 +25,194 @@
   <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className += ' wm-js';</script>
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="salto" href="#contenido">Saltar al contenido</a>
 
-  <div class="contenedor">
-    <header class="cabecera">
-      <a class="marca" href="index.html">
-        <picture>
-          <source srcset="assets/logo.webp" type="image/webp">
-          <img src="assets/logo.png" width="284" height="208" alt="Inés Barrios Reformas e Interiorismo">
-        </picture>
-      </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html">Inicio</a>
+  <nav class="nav" aria-label="Principal">
+    <a class="nav__marca" href="index.html">
+      <picture>
+        <source srcset="assets/logo-monograma.webp" type="image/webp">
+        <img src="assets/logo-monograma.png" width="144" height="144" alt="">
+      </picture>
+      <span>
+        <b>Inés Barrios</b>
+        <small>Reformas e Interiorismo</small>
+      </span>
+    </a>
+    <div class="nav__enlaces">
+      <a href="servicios.html" aria-current="page">Servicios</a>
+      <a href="index.html#como-trabajamos">Cómo trabajamos</a>
+      <a href="index.html#ambientes">Ambientes</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div class="nav__lado">
+      <a class="btn nav__cta" href="#contacto"><span class="largo">Solicita presupuesto</span><span class="corto">Presupuesto</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12.5 6l6 6-6 6"/></svg></span></a>
+      <button class="nav__boton" id="navBoton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMovil">
+        <svg class="abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="nav__movil" id="navMovil">
         <a href="servicios.html" aria-current="page">Servicios</a>
+        <a href="index.html#como-trabajamos">Cómo trabajamos</a>
+        <a href="index.html#ambientes">Ambientes</a>
         <a href="contacto.html">Contacto</a>
-        <a class="nav__tel" href="tel:+34647410445" aria-label="Llamar al 647 41 04 45">647 41 04 45</a>
-      </nav>
-    </header>
-  </div>
+        <a href="tel:+34647410445">Llamar al 647 41 04 45</a>
+      </div>
+    </div>
+  </nav>
 
   <main id="contenido">
-    <section class="entrada">
-      <span class="fantasma" aria-hidden="true">oficio</span>
-      <div class="contenedor entrada__rejilla">
-        <h1>Lo que hacemos, <em>estancia a estancia</em></h1>
-        <p class="entrada__texto">Cuatro tipos de encargo que a menudo se cruzan. Si no sabes en cuál encaja el tuyo, llámanos y lo vemos.</p>
+    <header class="portadilla">
+      <span class="eyebrow">— Servicios</span>
+      <h1>Lo que hacemos, <em>estancia a estancia</em></h1>
+      <div class="filete"></div>
+      <p class="entradilla">Cuatro tipos de encargo que a menudo se cruzan. Si no sabes en cuál encaja el tuyo, llámanos y lo vemos.</p>
+    </header>
+
+    <section class="seccion" aria-label="Servicios">
+      <div class="detalles">
+        <article class="detalle revela" id="reformas-integrales">
+          <div class="detalle__foto">
+            <img src="assets/img/salon-oliva.webp"
+                 srcset="assets/img/salon-oliva-sm.webp 600w, assets/img/salon-oliva.webp 1200w"
+                 sizes="(max-width: 900px) 92vw, 50vw"
+                 width="1200" height="900" loading="lazy" decoding="async"
+                 alt="Salón amplio de paredes claras con sofá modular verde oliva, lámpara de arco y cortinas color teja">
+          </div>
+          <div class="detalle__cuerpo">
+            <span class="eyebrow">Vivienda</span>
+            <h2>Reformas integrales de vivienda</h2>
+            <p>Para cuando la casa necesita replantearse entera. Distribución, instalaciones, acabados y luz se deciden juntos, como un solo proyecto y no como una suma de gremios.</p>
+            <ul><li>Redistribución de espacios</li><li>Suelos, paredes y techos</li><li>Instalaciones de la vivienda</li><li>Carpintería y acabados</li></ul>
+          </div>
+        </article>
+        <article class="detalle revela" id="cocinas">
+          <div class="detalle__foto">
+            <img src="assets/img/cocina-isla.webp"
+                 srcset="assets/img/cocina-isla-sm.webp 600w, assets/img/cocina-isla.webp 1200w"
+                 sizes="(max-width: 900px) 92vw, 50vw"
+                 width="1200" height="900" loading="lazy" decoding="async"
+                 alt="Cocina clara con isla central, dos taburetes y vitrinas altas iluminadas en tono dorado">
+          </div>
+          <div class="detalle__cuerpo">
+            <span class="eyebrow">Cocinas</span>
+            <h2>Cocinas</h2>
+            <p>La cocina es donde se está, no solo donde se cocina. Se piensa el recorrido, el almacenaje y la luz antes de elegir un solo frente.</p>
+            <ul><li>Distribución y almacenaje</li><li>Mobiliario y encimeras</li><li>Iluminación de trabajo y de ambiente</li><li>Integración de electrodomésticos</li></ul>
+          </div>
+        </article>
+        <article class="detalle revela" id="banos">
+          <div class="detalle__foto">
+            <img src="assets/img/bano-madera.webp"
+                 srcset="assets/img/bano-madera-sm.webp 600w, assets/img/bano-madera.webp 1200w"
+                 sizes="(max-width: 900px) 92vw, 50vw"
+                 width="1200" height="900" loading="lazy" decoding="async"
+                 alt="Baño con bañera exenta blanca, ducha acristalada sobre pared de madera oscura y luz natural lateral">
+          </div>
+          <div class="detalle__cuerpo">
+            <span class="eyebrow">Baños</span>
+            <h2>Baños</h2>
+            <p>Pocos metros y muchas decisiones. Revestimientos, grifería y luz elegidos para que el baño sea cómodo cada mañana y fácil de mantener.</p>
+            <ul><li>Duchas y bañeras</li><li>Revestimientos</li><li>Mobiliario y grifería</li><li>Espejos e iluminación</li></ul>
+          </div>
+        </article>
+        <article class="detalle revela" id="interiorismo">
+          <div class="detalle__foto">
+            <img src="assets/img/salon-arco.webp"
+                 srcset="assets/img/salon-arco-sm.webp 700w, assets/img/salon-arco.webp 1400w"
+                 sizes="(max-width: 900px) 92vw, 50vw"
+                 width="1400" height="1000" loading="lazy" decoding="async"
+                 alt="Salón en tonos crema con sofá y butacas de formas curvas, alfombra clara y paso en arco al fondo">
+          </div>
+          <div class="detalle__cuerpo">
+            <span class="eyebrow">Interiorismo</span>
+            <h2>Interiorismo y diseño de espacios</h2>
+            <p>Cuando no hace falta obra, o cuando la obra necesita una idea que la ordene. Se trabaja la distribución, la paleta y las piezas hasta que la casa se lee como un conjunto.</p>
+            <ul><li>Distribución y planteamiento</li><li>Materiales y color</li><li>Iluminación</li><li>Mobiliario y textiles</li></ul>
+          </div>
+        </article>
       </div>
+      <div class="franja revela" id="primera-visita">
+        <div class="franja__texto">
+          <h3>Primera visita sin compromiso</h3>
+          <p>Antes de hablar de obra vemos el espacio contigo y escuchamos qué necesitas. Después decides tú si seguimos adelante.</p>
+        </div>
+        <a class="btn btn--grande" href="#contacto">Solicita presupuesto<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12.5 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <p class="nota">Imágenes ilustrativas; no corresponden a obras de la empresa.</p>
     </section>
 
-    <div class="contenedor servicios">
-      <article class="servicio servicio--a" id="reformas-integrales">
-        <figure class="revela">
-          <img src="assets/img/salon-oliva.webp"
-               srcset="assets/img/salon-oliva-sm.webp 600w, assets/img/salon-oliva.webp 1200w"
-               sizes="(max-width: 600px) 100vw, (max-width: 900px) 82vw, 58vw"
-               width="1200" height="900"
-               alt="Salón amplio de paredes claras con sofá modular verde oliva, lámpara de arco y cortinas color teja">
-          <figcaption>Salón con gran ventanal</figcaption>
-        </figure>
-        <div class="servicio__texto">
-          <h2>Reformas integrales de vivienda</h2>
-          <p>Para cuando la casa necesita replantearse entera. Distribución, instalaciones, acabados y luz se deciden juntos, como un solo proyecto y no como una suma de gremios.</p>
-          <ul class="servicio__incluye">
-            <li>Redistribución de espacios</li>
-            <li>Suelos, paredes y techos</li>
-            <li>Instalaciones de la vivienda</li>
-            <li>Carpintería y acabados</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="servicio servicio--b" id="cocinas">
-        <figure class="revela">
-          <img src="assets/img/cocina-marmol.webp"
-               srcset="assets/img/cocina-marmol-sm.webp 450w, assets/img/cocina-marmol.webp 900w"
-               sizes="(max-width: 600px) 82vw, (max-width: 900px) 58vw, 32vw"
-               width="900" height="1200" loading="lazy"
-               alt="Isla de cocina con encimera de mármol blanco, fregadero y grifo dorados y lámparas colgantes de vidrio">
-          <figcaption>Isla de mármol con grifería dorada</figcaption>
-        </figure>
-        <div class="servicio__texto">
-          <h2>Cocinas</h2>
-          <p>La cocina es donde se está, no solo donde se cocina. Se piensa el recorrido, el almacenaje y la luz antes de elegir un solo frente.</p>
-          <ul class="servicio__incluye">
-            <li>Distribución y almacenaje</li>
-            <li>Mobiliario y encimeras</li>
-            <li>Iluminación de trabajo y de ambiente</li>
-            <li>Integración de electrodomésticos</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="servicio servicio--c" id="banos">
-        <figure class="revela">
-          <img src="assets/img/bano-madera.webp"
-               srcset="assets/img/bano-madera-sm.webp 600w, assets/img/bano-madera.webp 1200w"
-               sizes="(max-width: 600px) 100vw, (max-width: 900px) 74vw, 48vw"
-               width="1200" height="900" loading="lazy"
-               alt="Baño con bañera exenta blanca, ducha acristalada sobre pared de madera oscura y luz natural lateral">
-          <figcaption>Bañera exenta y ducha sobre madera</figcaption>
-        </figure>
-        <div class="servicio__texto">
-          <h2>Baños</h2>
-          <p>Pocos metros y muchas decisiones. Revestimientos, grifería y luz elegidos para que el baño sea cómodo cada mañana y fácil de mantener.</p>
-          <ul class="servicio__incluye">
-            <li>Duchas y bañeras</li>
-            <li>Revestimientos</li>
-            <li>Mobiliario y grifería</li>
-            <li>Espejos e iluminación</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="servicio servicio--d" id="interiorismo">
-        <figure class="revela">
-          <img src="assets/img/salon-arco.webp"
-               srcset="assets/img/salon-arco-sm.webp 700w, assets/img/salon-arco.webp 1400w"
-               sizes="(max-width: 600px) 100vw, (max-width: 900px) 82vw, 58vw"
-               width="1400" height="1000" loading="lazy"
-               alt="Salón en tonos crema con sofá y butacas de formas curvas, alfombra clara y paso en arco al fondo">
-          <figcaption>Salón de formas curvas en tonos crema</figcaption>
-        </figure>
-        <div class="servicio__texto">
-          <h2>Interiorismo y diseño de espacios</h2>
-          <p>Cuando no hace falta obra, o cuando la obra necesita una idea que la ordene. Se trabaja la distribución, la paleta y las piezas hasta que la casa se lee como un conjunto.</p>
-          <ul class="servicio__incluye">
-            <li>Distribución y planteamiento</li>
-            <li>Materiales y color</li>
-            <li>Iluminación</li>
-            <li>Mobiliario y textiles</li>
-          </ul>
-        </div>
-      </article>
-
-      <p class="aviso">Imágenes ilustrativas; no corresponden a obras de la empresa.</p>
-    </div>
-
-
-    <section class="banda" aria-labelledby="t-contacto">
-      <div class="contenedor banda__rejilla">
-        <h2 id="t-contacto">Cuéntanos <em>qué quieres cambiar</em></h2>
-        <div class="banda__lado">
-          <p>Por teléfono o por WhatsApp, como te resulte más cómodo.</p>
+    <section class="seccion contacto" id="contacto" aria-labelledby="t-contacto">
+      <div class="contacto__rejilla">
+        <div>
+          <span class="eyebrow">— Contacto</span>
+          <h2 id="t-contacto">¿Hablamos de <em>tu reforma</em>?</h2>
+          <p class="contacto__texto">Cuéntanos qué estancia quieres cambiar y en qué punto estás. Sin formularios: directamente por WhatsApp o por teléfono.</p>
           <div class="acciones">
-            <a class="btn btn--lleno" href="tel:+34647410445">Llamar al 647 41 04 45</a>
-            <a class="btn btn--linea" href="https://wa.me/34647410445" rel="noopener">Escribir por WhatsApp</a>
+            <a class="btn btn--grande btn--claro" href="https://wa.me/34647410445" rel="noopener">Solicita presupuesto por WhatsApp<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12.5 6l6 6-6 6"/></svg></span></a>
+            <a class="btn btn--grande btn--linea-clara" href="tel:+34647410445">Llámanos · 647 41 04 45</a>
           </div>
         </div>
+        <dl class="datos">
+          <div><dt>Teléfono</dt><dd><a href="tel:+34647410445">647 41 04 45</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/34647410445" rel="noopener">Abrir conversación de WhatsApp</a></dd></div>
+          <div><dt>Zona</dt><dd>Villaviciosa de Odón (Madrid)</dd></div>
+          <div><dt>Horario</dt><dd>Por confirmar</dd></div>
+          <div><dt>Primera visita</dt><dd>Sin compromiso</dd></div>
+        </dl>
       </div>
     </section>
   </main>
 
   <footer class="pie">
-    <div class="contenedor pie__rejilla">
-      <div class="pie__marca">
-        <span class="marca__nombre">Inés Barrios</span>
-        <p>Reformas e Interiorismo<br>Villaviciosa de Odón (Madrid)</p>
+    <div class="pie__tarjeta revela">
+      <div class="pie__rejilla">
+        <div>
+          <picture>
+            <source srcset="assets/logo.webp" type="image/webp">
+            <img class="pie__logo" src="assets/logo.png" width="284" height="208" loading="lazy" alt="Inés Barrios Reformas e Interiorismo">
+          </picture>
+          <p class="pie__desc">Reformas integrales, cocinas, baños e interiorismo en Villaviciosa de Odón (Madrid).</p>
+        </div>
+        <div class="pie__columnas">
+          <div>
+            <h2>Servicios</h2>
+            <ul>
+              <li><a href="servicios.html#reformas-integrales">Reformas integrales de vivienda</a></li>
+              <li><a href="servicios.html#cocinas">Cocinas</a></li>
+              <li><a href="servicios.html#banos">Baños</a></li>
+              <li><a href="servicios.html#interiorismo">Interiorismo y diseño de espacios</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>La empresa</h2>
+            <ul>
+              <li><a href="index.html#como-trabajamos">Cómo trabajamos</a></li>
+              <li><a href="index.html#ambientes">Ambientes</a></li>
+              <li><a href="index.html#primera-visita">Primera visita</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contacto</h2>
+            <ul>
+              <li><a href="tel:+34647410445">Llamar al 647 41 04 45</a></li>
+              <li><a href="https://wa.me/34647410445" rel="noopener">Escribir por WhatsApp</a></li>
+              <li><a href="contacto.html">Página de contacto</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <nav class="pie__nav" aria-label="Pie">
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-      <div class="pie__contacto">
-        <a href="tel:+34647410445">Llamar al 647 41 04 45</a>
-        <a href="https://wa.me/34647410445" rel="noopener">Escribir por WhatsApp</a>
-      </div>
-      <div class="pie__legal">
+      <div class="pie__barra">
         <p>Imágenes ilustrativas; no corresponden a obras de la empresa.</p>
         <p>Demo creada por WhiteMoon</p>
       </div>
     </div>
   </footer>
 
+  <!-- AGENTE IA: PR 3 -->
   <!-- Widget de contacto WhiteMoon: activar cuando exista el token de prueba (ver README).
   <script src="https://cdn.whitemoon.es/chat.js" data-token="WM-PENDIENTE"></script>
   -->

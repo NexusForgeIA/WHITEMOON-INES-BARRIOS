@@ -5,30 +5,40 @@ Villaviciosa de Odón (Madrid). No es la web definitiva de la empresa.
 
 - Contacto que muestra la demo: 647 41 04 45 (llamada y WhatsApp).
 - La demo está marcada `noindex, nofollow` y `robots.txt` bloquea todo el sitio.
-- GitHub Pages **no está activado**.
+- Publicada con GitHub Pages desde `main`: https://nexusforgeia.github.io/WHITEMOON-INES-BARRIOS/
 
 ## Estructura
 
 ```
-index.html        Portada
-servicios.html    Los cuatro servicios
+index.html        Landing de scroll único: inicio, servicios, cómo trabajamos,
+                  ambientes y contacto (secciones ancladas)
+servicios.html    Los cuatro servicios en detalle
 contacto.html     Llamar / WhatsApp (sin formulario)
 robots.txt        Disallow: /
 assets/
-  css/styles.css  Estilos y tokens de color (:root)
-  js/main.js      Aparición al hacer scroll y palabra rotatoria
-  fonts/          Cormorant Garamond y Sora en woff2, autoalojadas
-  img/            Fotos en WebP (tamaño completo y -sm)
-  og-image.jpg    Imagen para redes, 1200x630
+  css/styles.css        Estilos y tokens de color (:root)
+  js/main.js            Menú móvil y aparición al hacer scroll
+  fonts/                Cormorant Garamond y Sora en woff2, autoalojadas
+  img/                  Fotos en WebP (tamaño completo y -sm)
+  og-image.jpg          Imagen para redes, 1200x630
   logo-original.jpg     Logo tal como se recibió
-  logo.webp / logo.png  Logo de cabecera (recorte con transparencia)
+  logo.webp / logo.png  Logo completo (pie de página)
+  logo-monograma.webp / .png  Emblema «IB» (navegación fija)
   favicon.png           32x32, derivado del logo
   apple-touch-icon.png  180x180, derivado del logo
-  CREDITOS.md     Autor e ID de cada foto y licencias de las fuentes
+  CREDITOS.md           Autor e ID de cada foto y licencias de las fuentes
 ```
 
 HTML, CSS y JS puros. Sin frameworks, sin `package.json`, sin dependencias, sin
 analítica y sin cookies. No se carga ningún recurso externo.
+
+La maquetación sigue la estructura de la demo WHITEMOON-ESTETICA (hero en
+tarjeta, tarjetas de servicio, pasos, galería, pie en columnas) con la paleta
+clara y el logo de Inés. De ESTETICA no se ha tomado ningún texto, precio,
+color ni imagen.
+
+La navegación fija lleva el emblema del logo junto al nombre en texto, porque
+el logo completo no se lee a ese tamaño; el logo completo va en el pie.
 
 ## Pendiente antes de enseñarla
 
@@ -69,9 +79,25 @@ son un borrador sin validar:
 - Baños — a confirmar
 - Interiorismo y diseño de espacios — a confirmar
 
+Redactado nuevo en el rediseño, también **a confirmar con la clienta**:
+
+- «Primera visita sin compromiso» (sello del hero, franja destacada y bloque
+  de contacto) — a confirmar que la ofrece así.
+- Los cuatro pasos de «Cómo trabajamos»: nos cuentas tu idea, primera visita,
+  propuesta y presupuesto, obra y entrega — a confirmar que es su forma de
+  trabajar.
+- **Horario:** no se conoce. El bloque de contacto muestra «Por confirmar»;
+  hay que sustituirlo por el horario real o quitar la fila.
+- Pies de foto de «Ambientes».
+
+Decidido por Cris (ya no está a confirmar):
+
+- Titular del hero: «Reformas e interiorismo pensando en cómo la vives.»
+
 ### 3. Widget de contacto WhiteMoon
 
-Las tres páginas llevan, **comentado** justo antes de `</body>`:
+Las tres páginas llevan, justo antes de `</body>`, el marcador
+`<!-- AGENTE IA: PR 3 -->` y, **comentado**:
 
 ```html
 <script src="https://cdn.whitemoon.es/chat.js" data-token="WM-PENDIENTE"></script>

@@ -3,7 +3,8 @@
 ## Logo
 
 `logo-original.jpg` es el logo de Inés Barrios tal como lo facilitó la empresa.
-`logo.webp`, `logo.png`, `favicon.png` y `apple-touch-icon.png` son recortes
+`logo.webp`, `logo.png`, `logo-monograma.webp`, `logo-monograma.png`,
+`favicon.png` y `apple-touch-icon.png` son recortes
 derivados de ese archivo, sin redibujar nada.
 
 ## Imágenes
@@ -11,11 +12,13 @@ derivados de ese archivo, sin redibujar nada.
 Todas las fotografías proceden de [Unsplash](https://unsplash.com) (licencia
 Unsplash) y son **ilustrativas: no corresponden a obras de la empresa**.
 Ninguna incluye personas. Se sirven recortadas y convertidas a WebP en dos
-tamaños (`nombre.webp` y `nombre-sm.webp`).
+tamaños (`nombre.webp` y `nombre-sm.webp`), salvo la foto principal, que tiene
+un recorte horizontal para móvil (`salon-calido-900.webp`), y `cocina-clara.webp`,
+que solo existe en 640x640.
 
 | Archivo | Autor (usuario de Unsplash) | ID de la foto | Enlace |
 |---|---|---|---|
-| `img/salon-calido.webp` y `og-image.jpg` | @hypvisual | `aObxGPf7J1o` | https://unsplash.com/photos/aObxGPf7J1o |
+| `img/salon-calido.webp`, `img/salon-calido-900.webp` y `og-image.jpg` | @hypvisual | `aObxGPf7J1o` | https://unsplash.com/photos/aObxGPf7J1o |
 | `img/cocina-oscura.webp` | @ka_idris | `3-GXEUE_sCc` | https://unsplash.com/photos/3-GXEUE_sCc |
 | `img/bano-luz.webp` | @poojanclicks | `lXHnEe5AGVo` | https://unsplash.com/photos/lXHnEe5AGVo |
 | `img/cocina-isla.webp` | @medeadza | `1jy1WNfqHos` | https://unsplash.com/photos/1jy1WNfqHos |
@@ -23,6 +26,8 @@ tamaños (`nombre.webp` y `nombre-sm.webp`).
 | `img/cocina-marmol.webp` | @brianzajac | `ynVu56fpbN8` | https://unsplash.com/photos/ynVu56fpbN8 |
 | `img/bano-madera.webp` | @frankkip | `N03PjHWOEFA` | https://unsplash.com/photos/N03PjHWOEFA |
 | `img/salon-arco.webp` | @pipcke | `SZ-DsEZxzlg` | https://unsplash.com/photos/SZ-DsEZxzlg |
+| `img/salon-claro.webp` | @spacejoy | `Kh4tedFdHz4` | https://unsplash.com/photos/Kh4tedFdHz4 |
+| `img/cocina-clara.webp` | @zacgudakov | `o-uPDNNSsDA` | https://unsplash.com/photos/o-uPDNNSsDA |
 
 El autor figura por su nombre de usuario de Unsplash
 (`https://unsplash.com/@usuario`).

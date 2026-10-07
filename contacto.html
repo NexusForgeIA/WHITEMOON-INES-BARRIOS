@@ -7,6 +7,7 @@
   <meta name="description" content="Contacta con Inés Barrios Reformas e Interiorismo en Villaviciosa de Odón (Madrid): llama al 647 41 04 45 o escribe por WhatsApp.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://nexusforgeia.github.io/WHITEMOON-INES-BARRIOS/contacto.html">
+  <meta name="theme-color" content="#f5e7dc">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
@@ -24,78 +25,115 @@
   <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className += ' wm-js';</script>
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="salto" href="#contenido">Saltar al contenido</a>
 
-  <div class="contenedor">
-    <header class="cabecera">
-      <a class="marca" href="index.html">
-        <picture>
-          <source srcset="assets/logo.webp" type="image/webp">
-          <img src="assets/logo.png" width="284" height="208" alt="Inés Barrios Reformas e Interiorismo">
-        </picture>
-      </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html">Inicio</a>
+  <nav class="nav" aria-label="Principal">
+    <a class="nav__marca" href="index.html">
+      <picture>
+        <source srcset="assets/logo-monograma.webp" type="image/webp">
+        <img src="assets/logo-monograma.png" width="144" height="144" alt="">
+      </picture>
+      <span>
+        <b>Inés Barrios</b>
+        <small>Reformas e Interiorismo</small>
+      </span>
+    </a>
+    <div class="nav__enlaces">
+      <a href="servicios.html">Servicios</a>
+      <a href="index.html#como-trabajamos">Cómo trabajamos</a>
+      <a href="index.html#ambientes">Ambientes</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
+    </div>
+    <div class="nav__lado">
+      <a class="btn nav__cta" href="#contacto"><span class="largo">Solicita presupuesto</span><span class="corto">Presupuesto</span><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12.5 6l6 6-6 6"/></svg></span></a>
+      <button class="nav__boton" id="navBoton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMovil">
+        <svg class="abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="cerrar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="nav__movil" id="navMovil">
         <a href="servicios.html">Servicios</a>
+        <a href="index.html#como-trabajamos">Cómo trabajamos</a>
+        <a href="index.html#ambientes">Ambientes</a>
         <a href="contacto.html" aria-current="page">Contacto</a>
-        <a class="nav__tel" href="tel:+34647410445" aria-label="Llamar al 647 41 04 45">647 41 04 45</a>
-      </nav>
-    </header>
-  </div>
+        <a href="tel:+34647410445">Llamar al 647 41 04 45</a>
+      </div>
+    </div>
+  </nav>
 
   <main id="contenido">
-    <section class="contacto">
-      <span class="fantasma" aria-hidden="true">hablemos</span>
-      <div class="contenedor contacto__rejilla">
-        <h1>Hablemos de <em>tu casa</em></h1>
-        <p class="contacto__entrada">Cuéntanos qué estancia quieres cambiar y en qué punto estás. Una llamada o un mensaje bastan para empezar.</p>
-
-        <div class="contacto__tel">
-          <a href="tel:+34647410445" aria-label="Llamar al 647 41 04 45">647 41 04 45</a>
+    <section class="seccion contacto contacto--pagina" id="contacto" aria-labelledby="t-contacto">
+      <div class="contacto__rejilla">
+        <div>
+          <span class="eyebrow">— Contacto</span>
+          <h1 id="t-contacto">Hablemos de <em>tu casa</em></h1>
+          <p class="contacto__texto">Cuéntanos qué estancia quieres cambiar y en qué punto estás. Sin formularios: directamente por WhatsApp o por teléfono.</p>
+          <p><a class="telefono-grande" href="tel:+34647410445" aria-label="Llamar al 647 41 04 45">647 41 04 45</a></p>
           <div class="acciones">
-            <a class="btn btn--lleno" href="tel:+34647410445">Llamar ahora</a>
-            <a class="btn btn--linea" href="https://wa.me/34647410445" rel="noopener">Escribir por WhatsApp</a>
+            <a class="btn btn--grande btn--claro" href="https://wa.me/34647410445" rel="noopener">Solicita presupuesto por WhatsApp<span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12.5 6l6 6-6 6"/></svg></span></a>
+            <a class="btn btn--grande btn--linea-clara" href="tel:+34647410445">Llámanos · 647 41 04 45</a>
           </div>
         </div>
-
-        <dl class="contacto__datos">
-          <dt>Teléfono</dt>
-          <dd><a href="tel:+34647410445">647 41 04 45</a></dd>
-          <dt>WhatsApp</dt>
-          <dd><a href="https://wa.me/34647410445" rel="noopener">Abrir conversación de WhatsApp</a></dd>
-          <dt>Zona</dt>
-          <dd>Villaviciosa de Odón (Madrid)</dd>
+        <dl class="datos">
+          <div><dt>Teléfono</dt><dd><a href="tel:+34647410445">647 41 04 45</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/34647410445" rel="noopener">Abrir conversación de WhatsApp</a></dd></div>
+          <div><dt>Zona</dt><dd>Villaviciosa de Odón (Madrid)</dd></div>
+          <div><dt>Horario</dt><dd>Por confirmar</dd></div>
+          <div><dt>Primera visita</dt><dd>Sin compromiso</dd></div>
         </dl>
-        <p class="contacto__nota">El contacto es directo, por teléfono o por WhatsApp. Esta página no recoge datos ni usa cookies.</p>
       </div>
     </section>
   </main>
 
   <footer class="pie">
-    <div class="contenedor pie__rejilla">
-      <div class="pie__marca">
-        <span class="marca__nombre">Inés Barrios</span>
-        <p>Reformas e Interiorismo<br>Villaviciosa de Odón (Madrid)</p>
+    <div class="pie__tarjeta revela">
+      <div class="pie__rejilla">
+        <div>
+          <picture>
+            <source srcset="assets/logo.webp" type="image/webp">
+            <img class="pie__logo" src="assets/logo.png" width="284" height="208" loading="lazy" alt="Inés Barrios Reformas e Interiorismo">
+          </picture>
+          <p class="pie__desc">Reformas integrales, cocinas, baños e interiorismo en Villaviciosa de Odón (Madrid).</p>
+        </div>
+        <div class="pie__columnas">
+          <div>
+            <h2>Servicios</h2>
+            <ul>
+              <li><a href="servicios.html#reformas-integrales">Reformas integrales de vivienda</a></li>
+              <li><a href="servicios.html#cocinas">Cocinas</a></li>
+              <li><a href="servicios.html#banos">Baños</a></li>
+              <li><a href="servicios.html#interiorismo">Interiorismo y diseño de espacios</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>La empresa</h2>
+            <ul>
+              <li><a href="index.html#como-trabajamos">Cómo trabajamos</a></li>
+              <li><a href="index.html#ambientes">Ambientes</a></li>
+              <li><a href="index.html#primera-visita">Primera visita</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contacto</h2>
+            <ul>
+              <li><a href="tel:+34647410445">Llamar al 647 41 04 45</a></li>
+              <li><a href="https://wa.me/34647410445" rel="noopener">Escribir por WhatsApp</a></li>
+              <li><a href="contacto.html">Página de contacto</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <nav class="pie__nav" aria-label="Pie">
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-      <div class="pie__contacto">
-        <a href="tel:+34647410445">Llamar al 647 41 04 45</a>
-        <a href="https://wa.me/34647410445" rel="noopener">Escribir por WhatsApp</a>
-      </div>
-      <div class="pie__legal">
+      <div class="pie__barra">
         <p>Imágenes ilustrativas; no corresponden a obras de la empresa.</p>
         <p>Demo creada por WhiteMoon</p>
       </div>
     </div>
   </footer>
 
+  <!-- AGENTE IA: PR 3 -->
   <!-- Widget de contacto WhiteMoon: activar cuando exista el token de prueba (ver README).
   <script src="https://cdn.whitemoon.es/chat.js" data-token="WM-PENDIENTE"></script>
   -->
