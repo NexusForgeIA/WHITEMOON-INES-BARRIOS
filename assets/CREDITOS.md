@@ -1,5 +1,11 @@
 # Créditos
 
+## Logo
+
+`logo-original.jpg` es el logo de Inés Barrios tal como lo facilitó la empresa.
+`logo.webp`, `logo.png`, `favicon.png` y `apple-touch-icon.png` son recortes
+derivados de ese archivo, sin redibujar nada.
+
 ## Imágenes
 
 Todas las fotografías proceden de [Unsplash](https://unsplash.com) (licencia

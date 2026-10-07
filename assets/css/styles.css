@@ -25,14 +25,15 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* PALETA PROVISIONAL: sustituir por los colores extraídos de assets/logo.*
-     en cuanto exista el logo. Solo hay que tocar estas seis líneas. */
-  --marron: #4a3526;
-  --marron-tinta: #2c2018;
-  --dorado: #b8985a;
-  --dorado-claro: #dcc9a0;
-  --dorado-hondo: #7d6230;
-  --fondo: #f6f1ea;
+  /* Paleta extraída de assets/logo-original.jpg. El marrón del logo (#7c6a55)
+     y su dorado (#caa36f) no llegan a AA como texto sobre este fondo: el
+     marrón se oscurece manteniendo el tono y el dorado queda para líneas. */
+  --marron: #5e5141;
+  --marron-tinta: #3e352b;
+  --dorado: #caa36f;
+  --dorado-claro: #e7d6c6;
+  --dorado-hondo: #86735e;
+  --fondo: #f5e7dc;
 
   /* Derivados */
   --fondo-2: color-mix(in srgb, var(--fondo) 82%, var(--dorado-claro));
@@ -141,32 +142,26 @@ a {
 /* ---------- Cabecera ---------- */
 .cabecera {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding-block: 1.75rem;
+  padding-block: 1.25rem;
   border-bottom: 1px solid var(--linea);
 }
 
 .marca {
-  display: inline-flex;
-  flex-direction: column;
-  text-decoration: none;
-  line-height: 1;
+  display: block;
+  line-height: 0;
+}
+.marca img {
+  width: auto;
+  height: 6.5rem;
 }
 .marca__nombre {
   font-family: var(--serif);
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-}
-.marca__oficio {
-  margin-top: 0.4rem;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--texto-suave);
 }
 
 .nav {
@@ -827,7 +822,8 @@ a {
 @media (max-width: 600px) {
   body { font-size: 1rem; }
 
-  .cabecera { flex-direction: column; align-items: flex-start; gap: 1rem; padding-block: 1.25rem; }
+  .cabecera { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding-block: 1rem; }
+  .marca img { height: 5rem; }
   .nav { width: 100%; justify-content: space-between; gap: 1rem; }
 
   .portada__entrada,

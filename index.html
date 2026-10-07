@@ -18,7 +18,8 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
@@ -30,10 +31,11 @@
 
   <div class="contenedor">
     <header class="cabecera">
-      <!-- LOGO PENDIENTE: sustituir este texto por <picture> con assets/logo.webp y fallback assets/logo.png -->
-      <a class="marca" href="index.html" aria-label="Inés Barrios Reformas e Interiorismo, inicio">
-        <span class="marca__nombre">Inés Barrios</span>
-        <span class="marca__oficio">Reformas e Interiorismo</span>
+      <a class="marca" href="index.html">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp">
+          <img src="assets/logo.png" width="284" height="208" alt="Inés Barrios Reformas e Interiorismo">
+        </picture>
       </a>
       <nav class="nav" aria-label="Principal">
         <a href="index.html" aria-current="page">Inicio</a>

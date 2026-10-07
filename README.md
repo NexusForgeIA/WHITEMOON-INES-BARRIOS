@@ -20,7 +20,10 @@ assets/
   fonts/          Cormorant Garamond y Sora en woff2, autoalojadas
   img/            Fotos en WebP (tamaño completo y -sm)
   og-image.jpg    Imagen para redes, 1200x630
-  favicon.svg     Provisional
+  logo-original.jpg     Logo tal como se recibió
+  logo.webp / logo.png  Logo de cabecera (recorte con transparencia)
+  favicon.png           32x32, derivado del logo
+  apple-touch-icon.png  180x180, derivado del logo
   CREDITOS.md     Autor e ID de cada foto y licencias de las fuentes
 ```
 
@@ -29,21 +32,34 @@ analítica y sin cookies. No se carga ningún recurso externo.
 
 ## Pendiente antes de enseñarla
 
-### 1. Logo y paleta (PROVISIONAL)
+### 1. Logo en mejor formato
 
-El logo todavía no está en el repo. Mientras tanto:
+El logo recibido (`assets/logo-original.jpg`) es un JPG de 1024x1024 con fondo
+texturizado, sin transparencia. De él salen:
 
-- La cabecera muestra el nombre en texto. Cada página tiene un comentario
-  `LOGO PENDIENTE` en el punto donde va el `<picture>` (`assets/logo.webp` con
-  respaldo `assets/logo.png`).
-- Los colores de `:root` en `assets/css/styles.css` (`--marron`,
-  `--marron-tinta`, `--dorado`, `--dorado-claro`, `--dorado-hondo`, `--fondo`)
-  son una **aproximación provisional**, no los colores reales de la marca. Al
-  recibir el logo hay que extraer sus tonos y sustituir esas seis líneas; el
-  resto de colores se derivan de ellas.
-- `assets/favicon.svg` es un monograma provisional.
+- `assets/logo.webp` y `assets/logo.png`: emblema y nombre recortados, con el
+  fondo convertido en transparencia. Solo funcionan bien sobre el fondo claro
+  de la web; sobre oscuro se ve la textura del papel.
+- `assets/favicon.png` (32x32) y `assets/apple-touch-icon.png` (180x180).
+
+Si la clienta tiene el logo en vectorial (SVG, AI, PDF) o en PNG con
+transparencia, conviene sustituir estos recortes.
+
+La paleta de `:root` en `assets/css/styles.css` sale de ese logo:
+
+| Variable | Valor | Origen |
+|---|---|---|
+| `--fondo` | `#f5e7dc` | Fondo del logo |
+| `--dorado` | `#caa36f` | Dorado de la «I»; solo líneas y acentos |
+| `--dorado-hondo` | `#86735e` | Marrón del nombre; solo cifras grandes |
+| `--dorado-claro` | `#e7d6c6` | Tono claro del fondo del logo |
+| `--marron` | `#5e5141` | Marrón del nombre (`#7c6a55`) oscurecido para cumplir AA |
+| `--marron-tinta` | `#3e352b` | El mismo tono, más oscuro, para el texto |
 
 ### 2. Servicios — A CONFIRMAR CON LA CLIENTA
+
+El logo dice «Interiorismo | Reformas | Decoración» y «Asesoramiento»; la web
+no menciona decoración ni asesoramiento. Hay que preguntarle si se añaden.
 
 Los cuatro servicios y todo su texto (descripciones y listas de «qué incluye»)
 son un borrador sin validar:
