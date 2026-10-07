@@ -18,6 +18,7 @@ robots.txt        Disallow: /
 assets/
   css/styles.css        Estilos y tokens de color (:root)
   js/main.js            Menú móvil y aparición al hacer scroll
+  js/ana.js             Chat de Ana (flujo de botones, sin dependencias)
   fonts/                Cormorant Garamond y Sora en woff2, autoalojadas
   img/                  Fotos en WebP (tamaño completo y -sm)
   og-image.jpg          Imagen para redes, 1200x630
@@ -27,10 +28,14 @@ assets/
   favicon.png           32x32, derivado del logo
   apple-touch-icon.png  180x180, derivado del logo
   CREDITOS.md           Autor e ID de cada foto y licencias de las fuentes
+supabase/functions/ines-lead/index.ts
+                        Edge Function que recibe los contactos del chat
 ```
 
 HTML, CSS y JS puros. Sin frameworks, sin `package.json`, sin dependencias, sin
-analítica y sin cookies. No se carga ningún recurso externo.
+analítica y sin cookies. No se carga ningún recurso externo; la única petición
+que sale del navegador es el envío del contacto del chat, y solo si la persona
+completa el flujo y acepta la política de privacidad.
 
 La maquetación sigue la estructura de la demo WHITEMOON-ESTETICA (hero en
 tarjeta, tarjetas de servicio, pasos, galería, pie en columnas) con la paleta
@@ -94,17 +99,66 @@ Decidido por Cris (ya no está a confirmar):
 
 - Titular del hero: «Reformas e interiorismo pensando en cómo la vives.»
 
-### 3. Widget de contacto WhiteMoon
+### 3. Chat de Ana
 
-Las tres páginas llevan, justo antes de `</body>`, el marcador
-`<!-- AGENTE IA: PR 3 -->` y, **comentado**:
+Las tres páginas cargan `assets/js/ana.js`: un botón flotante abajo a la
+derecha que abre un chat guiado **por botones**. No hay ningún modelo de
+lenguaje detrás: todas las respuestas están escritas en ese archivo. Por eso se
+presenta como «Asistente virtual» y no usa el widget del CDN (`chat.js`) ni
+ningún token.
 
-```html
-<script src="https://cdn.whitemoon.es/chat.js" data-token="WM-PENDIENTE"></script>
+Flujo: tipo de obra → localidad → cuándo empezar → preferencia de contacto
+(mañana o tarde, sin cita) → nombre → teléfono (9 dígitos) → casilla de
+privacidad → cierre con botones de llamar y WhatsApp. No da precios, plazos ni
+horarios.
+
+**Envío.** Al aceptar, el navegador hace un `POST` a
+`https://mlaqtniujnvfxcvcourm.supabase.co/functions/v1/ines-lead` con
+`navigator.sendBeacon` (cuerpo JSON en `text/plain`) y, si el beacon no sale,
+con `fetch` y `keepalive`. En el cliente no hay ninguna clave.
+
+**La función está desplegada** en el proyecto `mlaqtniujnvfxcvcourm`. Su código
+es `supabase/functions/ines-lead/index.ts`. Cada envío real crea una fila en
+`leads_web` y manda un aviso por Telegram, así que las pruebas del chat se
+hacen interceptando la petición. Con `sendBeacon` el navegador no informa de
+un fallo del servidor: si la función dejara de responder, la persona vería
+igualmente el mensaje de cierre. Para volver a desplegarla tras un cambio:
+
+```
+supabase functions deploy ines-lead --no-verify-jwt --project-ref mlaqtniujnvfxcvcourm
 ```
 
-Se activa cuando exista el token de prueba: sustituir `WM-PENDIENTE` por ese
-token y quitar el comentario. No hay ningún token real en el repo.
+Usa los mismos Secrets que `estetica-lead`: `TELEGRAM_BOT_TOKEN` y
+`TELEGRAM_CHAT_ID`. Inserta en `leads_web` con `sector='reformas'` y
+`origen='demo-ines-barrios'` y avisa por Telegram con un texto que empieza por
+«DEMO Inés Barrios».
+
+**Privacidad.** El pie de las tres páginas tiene un desplegable «Política de
+privacidad de esta demo» (`#privacidad`) que explica qué recoge el chat, para
+qué, dónde se guarda y cómo pedir el borrado (comercial@whitemoon.es).
+
+**Ojo:** en la demo los contactos llegan a WhiteMoon, no a Inés. El mensaje de
+cierre dice «Inés te llamará en cuanto pueda»; mientras sea una demo, quien
+recibe el aviso es WhiteMoon.
+
+Textos nuevos del chat, **a confirmar con la clienta**:
+
+- Saludo: «Hola, soy Ana, la asistente virtual de Inés Barrios. ¿Qué te
+  gustaría hacer en casa?»
+- El nombre «Ana» para la asistente.
+- Las cuatro frases informativas (cocina, baño, reforma integral,
+  interiorismo), tomadas de los textos de `servicios.html`, que también están
+  a confirmar.
+- Opciones de «¿Cuándo te gustaría empezar?»: Lo antes posible · En 1-3 meses
+  · Más adelante · Solo me estoy informando.
+- «¿Cuándo prefieres que te llame Inés? Es solo una preferencia: no es una
+  cita ni una hora confirmada.»
+- «Para cualquier otra consulta, lo mejor es hablar directamente con Inés.»
+- Cierre: «Gracias, [nombre]. Inés te llamará en cuanto pueda. Si prefieres no
+  esperar: 647 41 04 45 o WhatsApp.»
+- Pie del chat: «Ana no da presupuestos · Inés valora cada vivienda en la
+  primera visita».
+- Texto de la política de privacidad.
 
 ### 4. URL definitiva
 
