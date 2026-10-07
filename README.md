@@ -117,11 +117,12 @@ horarios.
 `navigator.sendBeacon` (cuerpo JSON en `text/plain`) y, si el beacon no sale,
 con `fetch` y `keepalive`. En el cliente no hay ninguna clave.
 
-**La función NO está desplegada.** `supabase/functions/ines-lead/index.ts` está
-en el repo para revisión. Hasta que se despliegue, el chat funciona pero el
-contacto no llega a ningún sitio (con `sendBeacon` el navegador no informa del
-fallo, así que la persona verá igualmente el mensaje de cierre). Para
-desplegarla:
+**La función está desplegada** en el proyecto `mlaqtniujnvfxcvcourm`. Su código
+es `supabase/functions/ines-lead/index.ts`. Cada envío real crea una fila en
+`leads_web` y manda un aviso por Telegram, así que las pruebas del chat se
+hacen interceptando la petición. Con `sendBeacon` el navegador no informa de
+un fallo del servidor: si la función dejara de responder, la persona vería
+igualmente el mensaje de cierre. Para volver a desplegarla tras un cambio:
 
 ```
 supabase functions deploy ines-lead --no-verify-jwt --project-ref mlaqtniujnvfxcvcourm
