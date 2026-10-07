@@ -1183,6 +1183,10 @@ p {
   .nav__marca b { font-size: 1rem; }
   .nav__cta { min-height: 2.75rem; padding-inline: 0.7rem; font-size: 0.8125rem; }
   .nav__boton { width: 2.75rem; height: 2.75rem; }
+
+  /* El botón largo de WhatsApp no cabe en una línea: se deja partir */
+  .contacto__rejilla > * { min-width: 0; }
+  .btn--grande { white-space: normal; text-align: center; }
 }
 
 /* ---------- Política de privacidad (pie) ---------- */
@@ -1232,21 +1236,72 @@ p {
   z-index: var(--z-chat);
   display: grid;
   place-items: center;
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 999px;
-  background: var(--marron);
-  color: var(--fondo);
-  box-shadow: var(--sombra-l), 0 0 0 1px var(--fondo);
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+  background: var(--fondo);
+  box-shadow: var(--sombra-l);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .ana-fab:hover {
-  background: var(--marron-tinta);
   transform: scale(1.05);
+  box-shadow: var(--sombra-l), var(--sombra-m);
 }
-.ana-fab svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.ana-fab:focus-visible {
+  outline: 3px solid var(--marron-tinta);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+.ana-fab picture,
+.ana-fab img {
+  width: 100%;
+  height: 100%;
+}
+.ana-fab img {
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Ondas: dos anillos que salen del botón. Solo se animan transform y
+   opacity, y no reciben clics ni ocupan sitio en la página. */
+.ana-fab::before,
+.ana-fab::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 2px solid var(--dorado);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes ana-onda {
+  from { transform: scale(1); opacity: 0.55; }
+  to { transform: scale(2.2); opacity: 0; }
+}
+@keyframes ana-latido {
+  0%, 30%, 100% { transform: scale(1); }
+  12% { transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ana-fab--ondas { animation: ana-latido 2.6s ease-in-out infinite; }
+  .ana-fab--ondas::before,
+  .ana-fab--ondas::after { animation: ana-onda 2.6s ease-out infinite; }
+  .ana-fab--ondas::after { animation-delay: 0.9s; }
+}
+
+/* Con movimiento reducido no hay ondas ni latido: un único anillo fijo */
+@media (prefers-reduced-motion: reduce) {
+  .ana-fab::before {
+    inset: -6px;
+    opacity: 1;
+  }
+  .ana-fab::after {
+    content: none;
+  }
 }
 
 .ana-panel {
@@ -1536,7 +1591,7 @@ p {
   .ana-panel { right: 1rem; bottom: 1rem; }
 }
 @media (max-width: 600px) {
-  .ana-fab { width: 3.5rem; height: 3.5rem; }
+  .ana-fab { width: 3.75rem; height: 3.75rem; }
   .ana-panel {
     left: 0.5rem;
     right: 0.5rem;
