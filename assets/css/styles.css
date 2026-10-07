@@ -981,6 +981,7 @@ p {
 /* ---------- Pie ---------- */
 .pie {
   padding: clamp(2.5rem, 5vw, 4rem) var(--lado) clamp(1.75rem, 3vw, 2.75rem);
+  background: var(--alterno);
 }
 .pie__tarjeta {
   max-width: var(--ancho);
@@ -988,7 +989,7 @@ p {
   padding: clamp(1.6rem, 3.4vw, 3.4rem) clamp(1.25rem, 3vw, 3rem) clamp(1.1rem, 2vw, 1.75rem);
   border: 1px solid var(--linea-oro);
   border-radius: 1.5rem;
-  background: var(--superficie);
+  background: var(--fondo);
   box-shadow: var(--sombra-m);
 }
 .pie__rejilla {
