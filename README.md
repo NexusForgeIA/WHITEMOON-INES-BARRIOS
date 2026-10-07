@@ -88,8 +88,11 @@ Redactado nuevo en el rediseño, también **a confirmar con la clienta**:
   trabajar.
 - **Horario:** no se conoce. El bloque de contacto muestra «Por confirmar»;
   hay que sustituirlo por el horario real o quitar la fila.
-- Titular del hero («Tu casa, pensada para vivirla») y pies de foto de
-  «Ambientes».
+- Pies de foto de «Ambientes».
+
+Decidido por Cris (ya no está a confirmar):
+
+- Titular del hero: «Reformas e interiorismo pensando en cómo la vives.»
 
 ### 3. Widget de contacto WhiteMoon
 

@@ -270,6 +270,15 @@ p {
 .nav__marca picture {
   flex: none;
 }
+.nav__marca span {
+  min-width: 0;
+  overflow: hidden;
+}
+.nav__marca b,
+.nav__marca small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .nav__marca img {
   width: 3.25rem;
   height: 3.25rem;
@@ -314,6 +323,7 @@ p {
 .nav__lado {
   position: relative;
   display: flex;
+  flex: none;
   align-items: center;
   gap: 0.6rem;
 }
@@ -458,7 +468,7 @@ p {
 
 .hero h1 {
   margin-top: 1.4rem;
-  font-size: clamp(2.4rem, min(4.9vw, 11.5vh), 4.6rem);
+  font-size: clamp(2.4rem, min(4.4vw, 11.5vh), 4rem);
   line-height: 1.04;
   letter-spacing: -0.02em;
 }
@@ -1141,11 +1151,14 @@ p {
 @media (max-width: 600px) {
   :root { --alto-nav: 4rem; }
 
-  .nav { padding-left: 0.6rem; }
+  .nav { gap: 0.5rem; padding-left: 0.6rem; padding-right: 0.5rem; }
+  .nav__marca { gap: 0.4rem; }
   .nav__marca img { width: 2.75rem; height: 2.75rem; }
-  .nav__marca b { font-size: 1.125rem; }
+  .nav__marca b { font-size: 1.0625rem; }
   .nav__marca small { display: none; }
-  .nav__cta { padding-left: 1rem; }
+  .nav__lado { gap: 0.4rem; }
+  .nav__cta { padding-inline: 0.9rem; }
+  .nav__cta .ic { display: none; }
   .nav__cta .largo { display: none; }
   .nav__cta .corto { display: inline; }
 
@@ -1161,4 +1174,12 @@ p {
   .pie__columnas { grid-template-columns: 1fr; }
   .pie__logo { height: 5rem; }
   .pie__barra { flex-direction: column; }
+}
+
+/* ---------- 380 px: móviles estrechos ---------- */
+@media (max-width: 380px) {
+  .nav__marca img { width: 2.5rem; height: 2.5rem; }
+  .nav__marca b { font-size: 1rem; }
+  .nav__cta { min-height: 2.75rem; padding-inline: 0.7rem; font-size: 0.8125rem; }
+  .nav__boton { width: 2.75rem; height: 2.75rem; }
 }
