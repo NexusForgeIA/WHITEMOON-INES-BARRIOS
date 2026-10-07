@@ -1,36 +1,48 @@
-// Inés Barrios · demo WhiteMoon — movimiento sutil, sin dependencias
+// Inés Barrios · demo WhiteMoon — menú móvil y aparición al hacer scroll
 (function () {
   'use strict';
 
-  var sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (sinMovimiento) return;
-
-  // Aparición al hacer scroll. El contenido es visible por defecto:
-  // solo se oculta si este script llega a ejecutarse.
-  var bloques = document.querySelectorAll('.revela');
-  if (bloques.length && 'IntersectionObserver' in window) {
-    document.documentElement.classList.add('js-anim');
-    var observador = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (entrada) {
-        if (!entrada.isIntersecting) return;
-        entrada.target.classList.add('is-visible');
-        observador.unobserve(entrada.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px' });
-    bloques.forEach(function (bloque) { observador.observe(bloque); });
+  // Menú móvil (<= 900 px)
+  var boton = document.getElementById('navBoton');
+  var panel = document.getElementById('navMovil');
+  if (boton && panel) {
+    var cerrar = function (devolverFoco) {
+      panel.classList.remove('is-abierto');
+      boton.setAttribute('aria-expanded', 'false');
+      boton.setAttribute('aria-label', 'Abrir menú');
+      if (devolverFoco) boton.focus();
+    };
+    boton.addEventListener('click', function () {
+      var abierto = panel.classList.toggle('is-abierto');
+      boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+      if (abierto) panel.querySelector('a').focus();
+    });
+    panel.querySelectorAll('a').forEach(function (enlace) {
+      enlace.addEventListener('click', function () { cerrar(false); });
+    });
+    document.addEventListener('click', function (e) {
+      if (panel.classList.contains('is-abierto') && !panel.contains(e.target) && !boton.contains(e.target)) cerrar(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('is-abierto')) cerrar(true);
+    });
   }
 
-  // Palabra rotatoria de la portada
-  var rota = document.querySelector('[data-rota]');
-  if (!rota) return;
-  var palabras = rota.getAttribute('data-rota').split('|');
-  var indice = 0;
-  setInterval(function () {
-    rota.classList.add('is-saliendo');
-    setTimeout(function () {
-      indice = (indice + 1) % palabras.length;
-      rota.textContent = palabras[indice];
-      rota.classList.remove('is-saliendo');
-    }, 300);
-  }, 2800);
+  // Aparición al hacer scroll. Sin IntersectionObserver o con movimiento
+  // reducido, todo queda visible desde el principio.
+  var bloques = document.querySelectorAll('.revela');
+  var sinMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || sinMovimiento) {
+    bloques.forEach(function (bloque) { bloque.classList.add('is-visible'); });
+    return;
+  }
+  var observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (!entrada.isIntersecting) return;
+      entrada.target.classList.add('is-visible');
+      observador.unobserve(entrada.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+  bloques.forEach(function (bloque) { observador.observe(bloque); });
 })();
